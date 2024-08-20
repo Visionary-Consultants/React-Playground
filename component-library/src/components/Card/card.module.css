@@ -1,0 +1,19 @@
+.card {
+  padding: 0;
+}
+
+.cardHeader,
+.cardBody,
+.cardFooter {
+  padding: 1.5rem;
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footerSeparator{
+  border-top: 1px solid rgba(var(--callout-border-rgb), 0.6);
+}

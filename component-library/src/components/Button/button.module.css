@@ -1,0 +1,24 @@
+.button{
+  display: inline-block;
+  padding: 6px 12px;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  font-size: 1rem;
+  line-height: 1.5;
+  border: 1px solid;
+  border-radius: .25rem;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.button.primary{
+  color: white;
+  background-color: #435ebe;
+  border-color: #435ebe;
+}
+
+.button.primary:hover{
+  background-color: #2F4289;
+}
