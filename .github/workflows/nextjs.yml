@@ -24,9 +24,6 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Export static files
-        run: npm run export
-
       - name: Configure Git user
         run: |
           git config --global user.name "Axel Vicente Magaña"
