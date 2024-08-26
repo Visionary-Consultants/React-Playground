@@ -84,6 +84,7 @@ export default function Home() {
 
     const rhombusShape = new THREE.Shape();
     
+    
     rhombusShape.moveTo(x , y);
     rhombusShape.lineTo(3, 1)
     rhombusShape.lineTo(6, 0)
