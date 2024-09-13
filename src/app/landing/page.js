@@ -23,21 +23,21 @@ export default function Home() {
     const mesh = useRef()
     const [dummy] = useState(() => new THREE.Object3D())
 
-    const loader = new STLLoader()
-    loader.load(
-      'assets/models/eyeball/eyeball.stl',
-      function (geometry) {
-        console.log(mesh);
-        mesh.current.geometry = geometry;
-        mesh.current.rotation.z = (Math.PI / 4);
-      },
-      (xhr) => {
-          console.log((xhr.loaded / xhr.total) * 100 + '% loaded')
-      },
-      (error) => {
-          console.log(error)
-      }
-    )
+    // const loader = new STLLoader()
+    // loader.load(
+    //   'assets/models/eyeball/eyeball.stl',
+    //   function (geometry) {
+    //     console.log(mesh);
+    //     mesh.current.geometry = geometry;
+    //     mesh.current.rotation.z = (Math.PI / 4);
+    //   },
+    //   (xhr) => {
+    //       console.log((xhr.loaded / xhr.total) * 100 + '% loaded')
+    //   },
+    //   (error) => {
+    //       console.log(error)
+    //   }
+    // )
 
     const {
       camera,
@@ -70,7 +70,7 @@ export default function Home() {
     return (
       <group>
         <mesh ref={mesh} {...props}>
-          {/* <boxGeometry args={[1,1,1]}/> */}
+          <boxGeometry args={[1,1,1]}/>
           <meshNormalMaterial />
         </mesh>
       </group>
@@ -103,10 +103,7 @@ export default function Home() {
       <div className={commonStyles.container}>
         <h1>Playground!</h1>
       </div>
-      <Card title='Card Title dzfdsfdsfsdfsd!' footer="I'm the footer" footerButton='click me!'>
-        <p>Card text in the body</p>
-      </Card>
-      <Card title='Card Title!'>
+      <Card title='Card Title!' footer="I'm the footer" footerButton='click me!'>
         <p>Card text in the body</p>
       </Card>
       <div className={`${commonStyles.container} ${styles.threeContainer}`}>

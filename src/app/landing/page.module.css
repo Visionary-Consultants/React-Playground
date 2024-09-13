@@ -1,0 +1,36 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 6rem;
+    min-height: 100vh;
+  }
+  
+  .threeContainer{
+    height: 50vh;
+    position: relative;
+  }
+  
+  .mainScene{
+    height: 100%;
+  }
+  
+  .subScene{
+    color: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    height: 60%;
+    width : 20%;
+    z-index: 1;
+    left: 40%;
+    top: 20%;
+    animation: fadeIn 5s; 
+  }
+  
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
