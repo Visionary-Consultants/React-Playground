@@ -2,6 +2,9 @@
 
 import { useRef, useState } from "react";
 import styles from "./page.module.css";
+import commonStyles from "../../styles/common.module.css";
+
+import Card from "@/components/Card/Card";
 
 import * as THREE from 'three';
 import { Canvas, extend, useFrame, useThree } from "@react-three/fiber";
@@ -11,8 +14,6 @@ extend({ OrbitControls });
 import { STLLoader } from 'three/examples/jsm/loaders/STLLoader.js';
 
 import { easing } from "maath";
-
-import 'material-icons/iconfont/material-icons.css';
 
 
 export default function Home() {
@@ -76,32 +77,6 @@ export default function Home() {
     )
   }
 
-  
-  function Rhombus(props) {
-    const group = useRef()
-    
-    const x = 0, y = 0;
-
-    const rhombusShape = new THREE.Shape();
-    
-    
-    rhombusShape.moveTo(x , y);
-    rhombusShape.lineTo(3, 1)
-    rhombusShape.lineTo(6, 0)
-    rhombusShape.lineTo(3, -1)
-
-    const geometry = new THREE.BoxGeometry( 1, 1, 1 );
-    const material = new THREE.MeshBasicMaterial( { color: 0xffff00 } );
-    const mesh = new THREE.Mesh( geometry, material );
-
-    console.log(group.current);
-
-    return (
-      <group ref={group} {...props}>
-      </group>
-    )
-  }
-
   const CameraControls = () => {
     const {
       camera,
@@ -125,30 +100,28 @@ export default function Home() {
 
   return (
     <main className={styles.main}>
-      <div className={`${styles.threeContainer}`}>
+      <div className={commonStyles.container}>
+        <h1>Playground!</h1>
+      </div>
+      <Card title='Card Title!' footer="I'm the footer" footerButton='click me!'>
+        <p>Card text in the body</p>
+      </Card>
+      <div className={`${commonStyles.container} ${styles.threeContainer}`}>
         {
-          false ? 
-          <div className={styles.scenePage}>
-            <div className={styles.menuItem}>
-              <span class="material-icons">settings</span>
-            </div>
-            <div className={`${styles.menuItem} ${styles.menuItemEnd}`}>
-              <span class="material-icons">person</span>
-            </div>
-            <div className={styles.menuItem}>
-            <span class="material-icons">mail</span>
-            </div>
+          locked == true ? 
+          <div className={styles.subScene}>
+            <h1>TONTO EL QUE LO LEA</h1>
           </div>
           : ''
         }
+        <div className={styles.mainScene}>
           <Canvas style={{ background: 'black' }} camera={{ position: [0, 0.1, 3] }}>
             <CameraControls />
             <ambientLight />
-            <axesHelper args={[20]}/>
             <directionalLight position={[10, 10, 10]} />
-            {/* <Cube /> */}
-            <Rhombus />
+            <Cube />
           </Canvas>
+        </div>
       </div>
     </main>
   );
