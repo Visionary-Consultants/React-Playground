@@ -1,8 +1,0 @@
-.container {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  border: 1px solid rgba(var(--callout-border-rgb), 0.6);
-  border-radius: var(--border-radius);
-  padding: 1rem;
-}

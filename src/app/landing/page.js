@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react";
 import styles from "./page.module.css";
-import commonStyles from "../styles/common.module.css";
+import commonStyles from "../../styles/common.module.css";
 
 import Card from "@/components/Card/Card";
 
